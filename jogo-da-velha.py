@@ -3,7 +3,8 @@ tabuleiro = [
     [" ", " ", " "],
     [" ", " ", " "],
 ]
-# array de linhas e colunas do tabuleiro
+# array de linhas e colunas do tabuleiro.
+# cada array dentro da array principal representa uma linha do tabuleiro
 
 jogador = "X"
 
@@ -25,6 +26,39 @@ def jogada(linha, coluna):
     return "O" if jogador == "X" else "X"
  #retorno O se o jogador for X, senao for O, é X
 
+def temGanhador():
+    #verifica linhas
+    for linha in range (3):
+        if(
+            tabuleiro [linha][0] != " " and
+            tabuleiro [linha][0] == tabuleiro[linha][1] and
+            tabuleiro [linha][0] == tabuleiro[linha][2] 
+        ):
+            print(f'{tabuleiro[linha][0] } é o vencedor!')
+            return True
+   
+    #verifica colunas
+    for coluna in range (3):
+        if (
+            tabuleiro [0][coluna] != " " and
+            tabuleiro [0][coluna] == tabuleiro[1][coluna] and
+            tabuleiro [0][coluna] == tabuleiro[2][coluna]
+        ):
+            print(f'{tabuleiro[0][coluna]} é o vencedor!')
+            return True
+
+    #verifica diagonais
+        if(
+            tabuleiro[1][1] != " " and
+            (tabuleiro[0][0] == tabuleiro[1][1] and
+            tabuleiro[0][0] == tabuleiro[2][2]) or
+            (tabuleiro [0][2] == tabuleiro[1][1] and
+            tabuleiro [1][1] == tabuleiro[2][0])
+        ):
+            print(f'{tabuleiro[1][1]} é o vencedor!')
+            return True
+    #se nao teve nenhum vencedor
+    return False
 while True:
     print (f'jogador da vez: {jogador}')
     try:
@@ -36,3 +70,5 @@ while True:
     except (IndexError):
         print("Entrada invalida. Os valores devem ser números inteiros.")
     exibeTabuleiro()
+    if temGanhador():
+        break
