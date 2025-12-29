@@ -59,6 +59,15 @@ def temGanhador():
             return True
     #se nao teve nenhum vencedor
     return False
+
+def temEmpate():
+    for linha in range (3):
+        for coluna in range (3):
+            if tabuleiro[linha][coluna] == " ":
+                return False
+    print("Deu empate!")
+    return True
+
 while True:
     print (f'jogador da vez: {jogador}')
     try:
@@ -70,5 +79,5 @@ while True:
     except (IndexError):
         print("Entrada invalida. Os valores devem ser números inteiros.")
     exibeTabuleiro()
-    if temGanhador():
+    if temGanhador() or temEmpate():
         break
