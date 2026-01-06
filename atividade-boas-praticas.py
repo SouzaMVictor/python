@@ -1,13 +1,14 @@
-def somar_maiores(lista, limite, multiplicador): 
-    resultado = [] 
-    soma_maiores = 0
-
-    for elemento in lista:
-        if elemento > limite: 
-            soma_maiores += elemento
-            resultado.append(elemento * multiplicador)
+def somar_maiores(lista, limite):
+    return sum(elemento for elemento in lista if elemento > limite)
+    #retorna a soma de todos os elementos maiores que o limite
+def multiplicar_lista(lista, multiplicador):
+    return [elemento * multiplicador for elemento in lista]
+    #retorna uma nova lista com cada elemento multiplicado pelo multiplicador
+def exibir_resposta(lista, limite, multiplicador): 
+    resultado = multiplicar_lista(lista, multiplicador)
+    soma_maiores = somar_maiores(lista, limite)
 
     print("soma:", soma_maiores)
     print("lista:", resultado)
 
-somar_maiores([10, 20, 30, 40, 50], 35, 2)
+exibir_resposta([10, 20, 30, 40, 50], 35, 2)
