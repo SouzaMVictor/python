@@ -1,7 +1,13 @@
-#código bagunçado
-def a(x,y,z): r=[]; s=0
-for t in x:
-    if t>y: s+=t
-    r.append(t*z)
-print("soma:", s)
-print("lista:", r)
+def somar_maiores(lista, limite, multiplicador): 
+    resultado = [] 
+    soma_maiores = 0
+
+    for elemento in lista:
+        if elemento > limite: 
+            soma_maiores += elemento
+            resultado.append(elemento * multiplicador)
+
+    print("soma:", soma_maiores)
+    print("lista:", resultado)
+
+somar_maiores([10, 20, 30, 40, 50], 35, 2)
