@@ -13,10 +13,12 @@ def exibir_labirinto(labirinto):
 def nao_pode_seguir(labirinto, linha, coluna):
     if (linha >= len(labirinto) or
         coluna >= len(labirinto) or
-        labirinto [linha][coluna] == 1):
+        linha < 0 or
+        coluna < 0 or
+        labirinto [linha][coluna] == 1 or labirinto [linha][coluna] == 2):
         return True
 
-def explorar_labirinto(labirinto,linha, coluna):
+def explorar_labirinto(labirinto, linha, coluna):
     print(f'explorando ({linha},{coluna})')
     if nao_pode_seguir(labirinto, linha, coluna):
         print(f'nao pode seguir ({linha}, {coluna})')
@@ -26,6 +28,10 @@ def explorar_labirinto(labirinto,linha, coluna):
         print('chegou ao final')
         return True
     
+    # marcar posição visitada
+
+    labirinto[linha][coluna] = 2
+
     return (
         explorar_labirinto(labirinto, linha, coluna + 1) or #direita
         explorar_labirinto(labirinto, linha + 1, coluna) or #baixo
