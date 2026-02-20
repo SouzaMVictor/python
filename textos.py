@@ -25,19 +25,37 @@
 
 # tarefa - montar um contador de palavras repetidas numa frase
 
-frase2 = 'A tecnologia moderna exige disciplina, e disciplina constante, porque sem disciplina nenhuma evolução acontece, e evolução verdadeira depende de foco, foco diário, foco intenso e foco absoluto naquilo que realmente importa, importa de verdade e importa profundamente.'
+# frase2 = 'A tecnologia moderna exige disciplina, e disciplina constante, porque sem disciplina nenhuma evolução acontece, e evolução verdadeira depende de foco, foco diário, foco intenso e foco absoluto naquilo que realmente importa, importa de verdade e importa profundamente.'
 
-def contadorDePalavrasRepetidas(texto):
-    palavras = texto.split()
-    print(f'palavras: {palavras}')
-    contagem = {}
-    for palavra in palavras:
-        palavra = palavra.strip('.,')
-        if palavra in contagem:
-            # contagem[palavra] += 1
-            contagem[palavra] = contagem[palavra] + 1
-        else:
-            contagem[palavra] = 1
-    print(f'contagem: {contagem}')
+# def contadorDePalavrasRepetidas(texto):
+#     palavras = texto.split()
+#     print(f'palavras: {palavras}')
+#     contagem = {}
+#     for palavra in palavras:
+#         palavra = palavra.strip('.,')
+#         if palavra in contagem:
+#             # contagem[palavra] += 1
+#             contagem[palavra] = contagem[palavra] + 1
+#         else:
+#             contagem[palavra] = 1
+#     print(f'contagem: {contagem}')
 
-contadorDePalavrasRepetidas(frase2)
+# contadorDePalavrasRepetidas(frase2)
+
+# tarefa - montar um contador de frases (separado por ponto final)
+
+frase3 = 'A disciplina constrói resultados sólidos e resultados duradouros. O foco constante gera progresso constante e progresso real. A prática diária fortalece a mente e fortalece a habilidade. O esforço contínuo produz crescimento contínuo e crescimento visível. A repetição consciente melhora o desempenho e melhora a confiança. A organização clara evita erros desnecessários e evita retrabalho constante. A atenção aos detalhes transforma trabalho comum em trabalho excelente. A persistência silenciosa supera talento distraído e supera desculpas frágeis. A consistência diária vence motivação passageira e vence entusiasmo temporário. A evolução verdadeira exige paciência verdadeira e exige compromisso firme.'
+
+def contadorDeFrases(texto):
+    frases = texto.split('.')
+    print(f'frases: {frases}')
+    print()
+    frases_limpa = [f.strip() for f in frases]
+    print(f'frases limpa: {frases_limpa}')
+    print()
+    frases_validas = [f for f in frases_limpa if len(f) > 0]
+    print(f'frases validas: {frases_validas}')
+    print()
+    print(f'quantidade de frases: {len(frases_validas)}')
+
+contadorDeFrases(frase3)
