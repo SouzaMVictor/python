@@ -1,4 +1,4 @@
-frase = ' O curso de Lógica de Programação é supimpa! '
+# frase = ' O curso de Lógica de Programação é supimpa! '
 # print(f'primeira letra: {frase[0]}')
 # print(f'ultima letra: {frase[-1]}')
 # print(f'tamanho da frase: {len(frase)}')
@@ -10,18 +10,34 @@ frase = ' O curso de Lógica de Programação é supimpa! '
 # print(f'limpando: {frase.strip()}')
 # print(f'tamanho da string limpa:{len(frase.strip())}')
 
-def analisadorDeTextos(texto):
-    palavras = texto.split()
-    num_palavras = len(palavras)
-    num_caracteres = len(texto)
-    num_caracteres_sem_espacos = num_caracteres - texto.count(' ')
-    return num_palavras, num_caracteres, num_caracteres_sem_espacos
+# def analisadorDeTextos(texto):
+#     palavras = texto.split()
+#     num_palavras = len(palavras)
+#     num_caracteres = len(texto)
+#     num_caracteres_sem_espacos = num_caracteres - texto.count(' ')
+#     return num_palavras, num_caracteres, num_caracteres_sem_espacos
 
-num_p, num_c, num_cse = analisadorDeTextos(frase)
+# num_p, num_c, num_cse = analisadorDeTextos(frase)
 
-print(f'numero palabras: {num_p}')
-print(f'numero caracteres: {num_c}')
-print(f'numero caracs sem espaco: {num_cse}')
+# print(f'numero palabras: {num_p}')
+# print(f'numero caracteres: {num_c}')
+# print(f'numero caracs sem espaco: {num_cse}')
 
 # tarefa - montar um contador de palavras repetidas numa frase
 
+frase2 = 'A tecnologia moderna exige disciplina, e disciplina constante, porque sem disciplina nenhuma evolução acontece, e evolução verdadeira depende de foco, foco diário, foco intenso e foco absoluto naquilo que realmente importa, importa de verdade e importa profundamente.'
+
+def contadorDePalavrasRepetidas(texto):
+    palavras = texto.split()
+    print(f'palavras: {palavras}')
+    contagem = {}
+    for palavra in palavras:
+        palavra = palavra.strip('.,')
+        if palavra in contagem:
+            # contagem[palavra] += 1
+            contagem[palavra] = contagem[palavra] + 1
+        else:
+            contagem[palavra] = 1
+    print(f'contagem: {contagem}')
+
+contadorDePalavrasRepetidas(frase2)
