@@ -1,12 +1,13 @@
+from collections import deque
 def criarFila():
-    return []
+    return deque()
 
 
 def insereNaFila(fila, elemento):
         fila.append(elemento)
 
 def removeDaFila(fila):
-    return fila.pop(0)
+    return fila.popleft()
 
 fila = criarFila()
 
