@@ -46,16 +46,27 @@
 
 frase3 = 'A disciplina constrói resultados sólidos e resultados duradouros. O foco constante gera progresso constante e progresso real. A prática diária fortalece a mente e fortalece a habilidade. O esforço contínuo produz crescimento contínuo e crescimento visível. A repetição consciente melhora o desempenho e melhora a confiança. A organização clara evita erros desnecessários e evita retrabalho constante. A atenção aos detalhes transforma trabalho comum em trabalho excelente. A persistência silenciosa supera talento distraído e supera desculpas frágeis. A consistência diária vence motivação passageira e vence entusiasmo temporário. A evolução verdadeira exige paciência verdadeira e exige compromisso firme.'
 
-def contadorDeFrases(texto):
-    frases = texto.split('.')
-    print(f'frases: {frases}')
-    print()
-    frases_limpa = [f.strip() for f in frases]
-    print(f'frases limpa: {frases_limpa}')
-    print()
-    frases_validas = [f for f in frases_limpa if len(f) > 0]
-    print(f'frases validas: {frases_validas}')
-    print()
-    print(f'quantidade de frases: {len(frases_validas)}')
+# def contadorDeFrases(texto):
+#     frases = texto.split('.')
+#     print(f'frases: {frases}')
+#     print()
+#     frases_limpa = [f.strip() for f in frases]
+#     print(f'frases limpa: {frases_limpa}')
+#     print()
+#     frases_validas = [f for f in frases_limpa if len(f) > 0]
+#     print(f'frases validas: {frases_validas}')
+#     print()
+#     print(f'quantidade de frases: {len(frases_validas)}')
 
-contadorDeFrases(frase3)
+# contadorDeFrases(frase3)
+
+# refatorar e melhorar
+
+def separadorDeFrases(texto):
+    frases = texto.split('.')
+    return [f.strip() for f in frases if f.strip()]
+
+def contadorDeFrases(texto):
+    return len(separadorDeFrases(texto))
+
+print(f'quantidade de frases: {contadorDeFrases(frase3)}')
