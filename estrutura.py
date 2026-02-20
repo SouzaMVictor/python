@@ -31,7 +31,7 @@
 # mista = [1, 'maça', 3.14, True]
 
 
-# tuplas: conjunto de dados ordeanos e imutavel
+# tuplas: conjunto de dados ordenados e imutavel
 # coordenada = (5,6)
 # tupla = (1,2,4, 'justo')
 
