@@ -25,7 +25,7 @@
 
 # ----------------------
 
-# listas: conjunto de dados ordanos e mutavel
+# listas: conjunto de dados ordenados e mutavel
 # lista = [1,2,4, 'justo']
 # frutas = ['maça', 'banana', 'laranja']
 # mista = [1, 'maça', 3.14, True]
